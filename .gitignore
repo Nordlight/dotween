@@ -56,10 +56,3 @@ screenshots
 zzTemp*
 
 _DOTween.Timeline
-
-Package/**/*.cs
-Package/**/*.dll
-Package/**/*.dll.mdb
-Package/**/*.xml
-Package/**/*.jpg
-Package/**/*.png
