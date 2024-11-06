@@ -103,12 +103,6 @@ jobs:
         run: dotnet build -c Release _DOTween.Assembly/DOTweenEditor/DOTweenEditor.csproj
         shell: pwsh
 
-      # UnityEngine.UI.dll can only be referenced up to Unity 2019.2, after that version it does not come installed with the editor.
-      - name: Build DOTween_LooseScripts
-        if: ${{ startsWith(matrix.unity.version, '5.6') || startsWith(matrix.unity.version, '2017') || startsWith(matrix.unity.version, '2018') || startsWith(matrix.unity.version, '2019.1') || startsWith(matrix.unity.version, '2019.2') }}
-        run: dotnet build -c Release _DOTween.Assembly/DOTween_LooseScripts/DOTween_LooseScripts.csproj
-        shell: pwsh
-
       - name: Replace if true to false in the modules to use the version defines in package
         run: |
           foreach ($filePath in [System.IO.Directory]::GetFiles("Package/DOTween/Modules", "*.cs", [System.IO.SearchOption]::TopDirectoryOnly)) {
