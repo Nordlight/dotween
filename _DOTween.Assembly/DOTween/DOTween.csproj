@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DefineConstants>UNITY_2019_OR_NEWER;$(DefineConstants)</DefineConstants>
+    <DefineConstants>UNITY_5_3_OR_NEWER;UNITY_2017_1_OR_NEWER;NET_STANDARD_2_0;UNITY_2018_1_OR_NEWER;UNITY_2019_OR_NEWER;$(DefineConstants)</DefineConstants>
   </PropertyGroup>
   
   <PropertyGroup>
