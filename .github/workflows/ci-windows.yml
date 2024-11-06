@@ -15,8 +15,7 @@ jobs:
       matrix:
         unity:
           [
-            { version: 2020.3.26f1, hash: ec6cd8118806 },
-            { version: 2021.3.6f1, hash: 7da38d85baf6 },
+            { version: 2022.3.26f1, hash: ec6cd8118806 }
           ]
 
     steps:
