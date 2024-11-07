@@ -104,6 +104,7 @@ jobs:
 
       - name: Replace if true to false in the modules to use the version defines in package
         run: |
+          Get-ChildItem -Path "Package/DOTween/Modules" -File | ForEach-Object { $_.Name }
           foreach ($filePath in [System.IO.Directory]::GetFiles("Package/DOTween/Modules", "*.cs", [System.IO.SearchOption]::TopDirectoryOnly)) {
               $fileContent = Get-Content $filePath -Encoding UTF8 -Raw
               $fileContent = $fileContent -replace '#if (\(?)true', '#if $1false'
