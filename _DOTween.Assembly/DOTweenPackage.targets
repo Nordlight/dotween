@@ -23,7 +23,7 @@
         <Copy SourceFiles="$(ProjectDir)../package_bin/DOTween.dll.mdb" DestinationFolder="$(ProjectDir)../../Package/DOTween" Retries="3" RetryDelayMilliseconds="500" />
         <Message Text="Copying $(ProjectDir)../package_bin/DOTween.xml to $(ProjectDir)../../Package/DOTween" Importance="High" />
         <Copy SourceFiles="$(ProjectDir)../package_bin/DOTween.xml" DestinationFolder="$(ProjectDir)../../Package/DOTween" Retries="3" RetryDelayMilliseconds="500" />
-
+        <!--
         <ItemGroup>
             <PreviousDOTweenModules Include="$(ProjectDir)../../Package/DOTween/Modules/*.cs" />
         </ItemGroup>
@@ -35,7 +35,7 @@
         </ItemGroup>
         <Message Text="Copying $(ProjectDir)../bin/Modules/*.cs to $(ProjectDir)../../Package/DOTween/Modules" Importance="High" />
         <Copy SourceFiles="@(DOTweenModules)" DestinationFolder="$(ProjectDir)../../Package/DOTween/Modules" Retries="3" RetryDelayMilliseconds="500" />
-
+        -->
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
