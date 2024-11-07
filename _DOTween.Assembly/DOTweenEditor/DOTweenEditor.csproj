@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Unity3D" Version="2.0.1" />
+    <PackageReference Include="Unity3D" Version="2.1.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,5 +56,5 @@
 
   <Import Project="../DOTweenShared.targets" />
   <Import Project="../DOTween.targets" />
-  <Import Project="../DOTweenEditorPackage.targets" Condition=" '$(DOTweenPackageGenerationEnabled)' == 'true' And '$(TargetFramework)' == 'netstandard2.0' " />
+  <Import Project="../DOTweenEditorPackage.targets" Condition=" '$(DOTweenPackageGenerationEnabled)' == 'true' And '$(TargetFramework)' == 'netstandard2.1' " />
 </Project>

@@ -10,7 +10,7 @@
         <Delete Files="$(TargetDir)$(TargetName).pdb" />
     </Target>
 
-    <Target Name="DOTweenNetFrameworkPostBuild" AfterTargets="PostBuildEvent" Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
+    <Target Name="DOTweenNetFrameworkPostBuild" AfterTargets="PostBuildEvent" Condition=" '$(TargetFramework)' != 'netstandard2.1' ">
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
@@ -82,7 +82,7 @@
         <Message Text=" " Importance="High" />
     </Target>
 
-    <Target Name="DOTweenNetStandardPostBuild" AfterTargets="PostBuildEvent" Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <Target Name="DOTweenNetStandardPostBuild" AfterTargets="PostBuildEvent" Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
         <Message Text=" " Importance="High" />
