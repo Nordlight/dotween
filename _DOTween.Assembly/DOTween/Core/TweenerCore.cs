@@ -263,7 +263,7 @@ namespace DG.Tweening.Core
                     // Target/field doesn't exist anymore: kill tween
                     if (Debugger.ShouldLogSafeModeCapturedError()) {
                         Debugger.LogSafeModeCapturedError(string.Format(
-                            "Target or field is missing/null ({0}) ► {1}\n\n{2}\n\n", e.TargetSite, e.Message, e.StackTrace
+                            "Target or field is missing/null ({0} {1}) ► {2}\n\n{3}\n\n", this.memberName, this.lineNumber, e.Message, e.StackTrace
                         ), this);
                     }
                     DOTween.safeModeReport.Add(SafeModeReport.SafeModeReportType.TargetOrFieldMissing);

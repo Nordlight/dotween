@@ -86,6 +86,9 @@ namespace DG.Tweening
         /// Set by SetTarget if DOTween's Debug Mode is on (see DOTween Utility Panel -> "Store GameObject's ID" debug option
         /// </summary>
         public string debugTargetId;
+        public string sourceFilePath;
+        public string memberName;
+        public int lineNumber;
 
         // SETUP DATA ////////////////////////////////////////////////
 

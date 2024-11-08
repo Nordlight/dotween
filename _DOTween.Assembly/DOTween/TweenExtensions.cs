@@ -4,6 +4,7 @@
 // License Copyright (c) Daniele Giardini.
 // This work is subject to the terms at http://dotween.demigiant.com/license.php
 
+using System.Runtime.CompilerServices;
 using DG.Tweening.Core;
 using DG.Tweening.Core.Easing;
 using DG.Tweening.Core.Enums;
@@ -182,7 +183,7 @@ namespace DG.Tweening
         }
 
         /// <summary>Plays the tween</summary>
-        public static T Play<T>(this T t) where T : Tween
+        public static T Play<T>(this T t, [CallerMemberName] string memberName = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0) where T : Tween
         {
             if (t == null) {
                 if (Debugger.logPriority > 1) Debugger.LogNullTween(t); return t;
@@ -192,6 +193,9 @@ namespace DG.Tweening
                 if (Debugger.logPriority > 1) Debugger.LogNestedTween(t); return t;
             }
 
+            t.sourceFilePath = filePath;
+            t.memberName = memberName;
+            t.lineNumber = lineNumber;
             TweenManager.Play(t);
             return t;
         }
