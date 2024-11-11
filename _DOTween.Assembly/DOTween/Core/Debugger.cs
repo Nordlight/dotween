@@ -50,7 +50,10 @@ namespace DG.Tweening.Core
         public static void LogSafeModeCapturedError(object message, Tween t = null)
         {
             string txt;
-            if (DOTween.debugMode) txt = _LogPrefix + GetDebugDataMessage(t) + message;
+            if (DOTween.debugMode)
+            {
+                txt = _LogPrefix + GetDebugDataMessage(t) + message;
+            }
             else txt = _LogPrefix + message;
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Log, txt)) return;
             switch (DOTween.safeModeLogBehaviour) {
@@ -180,6 +183,7 @@ namespace DG.Tweening.Core
                 if (hasIntId) message += string.Format("[intId: {0}]", t.intId);
                 message += "\n";
             }
+            message += $" Play called from: {t.memberName}@{t.lineNumber}";
         }
 
         #endregion
