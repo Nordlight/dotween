@@ -85,7 +85,7 @@ namespace DG.Tweening.Core
 
         public static void LogInvalidTween(Tween t)
         {
-            LogWarning("This Tween has been killed and is now invalid");
+            LogWarning("This Tween has been killed and is now invalid", t);
         }
 
 //        public static void LogNullTarget()
