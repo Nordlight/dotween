@@ -186,7 +186,7 @@ namespace DG.Tweening.Core
                 if (hasIntId) message += string.Format("[intId: {0}]", t.intId);
                 message += "\n";
             }
-            message += $" Play called from: {t.memberName}@{t.lineNumber} in {t.sourceFilePath}";
+            message += $" Play called from: {t.memberName}@{t.lineNumber} in {t.sourceFilePath}. ";
         }
 
         #endregion
