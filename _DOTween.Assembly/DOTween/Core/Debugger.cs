@@ -167,6 +167,10 @@ namespace DG.Tweening.Core
 
         static string GetDebugDataMessage(Tween t)
         {
+            if(t == null){
+                return $"The Tween is null!";
+            }
+            
             Debug.Log("MemberName "+ t.memberName);
             Debug.Log("lineNumber "+ t.lineNumber);
             Debug.Log("sourceFilePath "+ t.sourceFilePath);
