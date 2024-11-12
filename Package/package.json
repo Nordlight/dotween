@@ -2,7 +2,7 @@
   "name": "com.demigiant.dotween",
   "displayName": "DOTween",
   "description": "DOTween is a fast, efficient, fully type-safe object-oriented animation engine, optimized for C#.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2020.3",
   "author": {
     "name": "Daniele Giardini",
