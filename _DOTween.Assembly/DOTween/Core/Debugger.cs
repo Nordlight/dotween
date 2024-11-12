@@ -31,19 +31,19 @@ namespace DG.Tweening.Core
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Log, txt)) return;
             Debug.Log(txt);
         }
-        public static void LogWarning(object message, Tween t = null)
+        public static void LogWarning(string message, Tween t = null)
         {
             string txt;
-            if (DOTween.debugMode) txt = _LogPrefix + GetDebugDataMessage(t) + message;
-            else txt = _LogPrefix + message;
+            /*if (DOTween.debugMode)*/ txt = _LogPrefix + GetDebugDataMessage(t) + message;
+           /* else txt = _LogPrefix + message;*/
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Warning, txt)) return;
             Debug.LogWarning(txt);
         }
-        public static void LogError(object message, Tween t = null)
+        public static void LogError(string message, Tween t = null)
         {
             string txt;
-            if (DOTween.debugMode) txt = _LogPrefix + GetDebugDataMessage(t) + message;
-            else txt = _LogPrefix + message;
+           /* if (DOTween.debugMode) */ txt = _LogPrefix + GetDebugDataMessage(t) + message;
+           /* else txt = _LogPrefix + message;*/
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Error, txt)) return;
             Debug.LogError(txt);
         }
