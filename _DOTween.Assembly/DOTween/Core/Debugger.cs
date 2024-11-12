@@ -36,9 +36,7 @@ namespace DG.Tweening.Core
             string txt;
             /*if (DOTween.debugMode)*/ txt = _LogPrefix + GetDebugDataMessage(t) + message;
            /* else txt = _LogPrefix + message;*/
-            Debug.Log("LogWarning 1 "+txt);
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Warning, txt)) return;
-            Debug.Log("LogWarning 2 "+txt);
             Debug.LogWarning(txt);
         }
         public static void LogError(string message, Tween t = null)
@@ -167,19 +165,17 @@ namespace DG.Tweening.Core
 
         static string GetDebugDataMessage(Tween t)
         {
-            if(t == null){
-                return $"The Tween is null!";
-            }
-            
-            Debug.Log("MemberName "+ t.memberName);
-            Debug.Log("lineNumber "+ t.lineNumber);
-            Debug.Log("sourceFilePath "+ t.sourceFilePath);
-            return $" Play called from: {t.memberName}@{t.lineNumber} in {t.sourceFilePath}";
+            string txt = "";
+            AddDebugDataToMessage(ref txt, t);
+            return txt;
         }
 
         static void AddDebugDataToMessage(ref string message, Tween t)
         {
-            if (t == null) return;
+            if (t == null) {
+                message += $"Tween is null, skipping DebugData.";
+                return;
+            };
             bool hasDebugTargetId = t.debugTargetId != null;
             bool hasStringId = t.stringId != null;
             bool hasIntId = t.intId != -999;
