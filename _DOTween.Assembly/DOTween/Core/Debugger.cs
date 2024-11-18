@@ -175,7 +175,7 @@ namespace DG.Tweening.Core
             if (t == null) {
                 message += $"Tween is null, skipping DebugData.";
                 return;
-            };
+            }
             bool hasDebugTargetId = t.debugTargetId != null;
             bool hasStringId = t.stringId != null;
             bool hasIntId = t.intId != -999;
@@ -186,7 +186,6 @@ namespace DG.Tweening.Core
                 if (hasIntId) message += string.Format("[intId: {0}]", t.intId);
                 message += "\n";
             }
-            message += $" Play called from: {t.memberName}@{t.lineNumber} in {t.sourceFilePath}. ";
         }
 
         #endregion

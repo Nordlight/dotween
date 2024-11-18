@@ -183,7 +183,7 @@ namespace DG.Tweening
         }
 
         /// <summary>Plays the tween</summary>
-        public static T Play<T>(this T t, [CallerMemberName] string memberName = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0) where T : Tween
+        public static T Play<T>(this T t) where T : Tween
         {
             if (t == null) {
                 if (Debugger.logPriority > 1) Debugger.LogNullTween(t); return t;
@@ -192,10 +192,6 @@ namespace DG.Tweening
             } else if (t.isSequenced) {
                 if (Debugger.logPriority > 1) Debugger.LogNestedTween(t); return t;
             }
-
-            t.sourceFilePath = filePath;
-            t.memberName = memberName;
-            t.lineNumber = lineNumber;
             TweenManager.Play(t);
             return t;
         }
