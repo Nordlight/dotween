@@ -50,11 +50,11 @@ namespace DG.Tweening.Core
         public static void LogSafeModeCapturedError(object message, Tween t = null)
         {
             string txt;
-            if (DOTween.debugMode)
-            {
+            /*if (DOTween.debugMode)
+            {*/
                 txt = _LogPrefix + GetDebugDataMessage(t) + message;
-            }
-            else txt = _LogPrefix + message;
+            /*}
+            else txt = _LogPrefix + message;*/
             if (DOTween.onWillLog != null && !DOTween.onWillLog(LogType.Log, txt)) return;
             switch (DOTween.safeModeLogBehaviour) {
             case SafeModeLogBehaviour.Normal:
